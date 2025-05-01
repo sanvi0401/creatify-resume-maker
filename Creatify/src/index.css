@@ -1,0 +1,85 @@
+@import url('https://api.fontshare.com/v2/css?f[]=cal-sans@400,500,600,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 72% 29%;
+    --primary-foreground: 144 72% 91%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142 72% 29%;
+
+    /* Border radius values */
+    --radius: 1rem;
+    --radius-sm: calc(var(--radius) - 0.4rem);
+    --radius-md: calc(var(--radius) - 0.2rem);
+    --radius-lg: var(--radius);
+    --radius-full: 9999px;
+  }
+}
+
+@layer components {
+  .gradient-background {
+    @apply bg-gradient-to-br from-zinc-900 via-purple-900/20 to-zinc-900;
+  }
+
+  .gradient-glow {
+    @apply bg-emerald-500/20 blur-[100px];
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-br from-white to-white/40 text-transparent bg-clip-text;
+  }
+
+  /* Box styles with proper border radius */
+  .box {
+    @apply rounded-lg border border-zinc-800/50 bg-zinc-900/50 backdrop-blur-sm;
+  }
+
+  .box-lg {
+    @apply rounded-xl border border-zinc-800/50 bg-zinc-900/50 backdrop-blur-sm;
+  }
+
+  .box-full {
+    @apply rounded-full border border-zinc-800/50 bg-zinc-900/50 backdrop-blur-sm;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-zinc-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-800 rounded-full hover:bg-zinc-700 transition-colors;
+}
